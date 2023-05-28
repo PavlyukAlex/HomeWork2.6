@@ -35,6 +35,11 @@
                                 <rect key="frame" x="152" y="335" width="71" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log In"/>
+                                <connections>
+                                    <action selector="logInPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="laO-WH-Unu"/>
+                                    <action selector="unwindToFirstVCWithSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KMX-cY-l51"/>
+                                    <segue destination="TZ4-3O-und" kind="presentation" id="Eeh-ky-k2k"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUM-kG-qEP">
                                 <rect key="frame" x="16" y="374" width="172" height="34.5"/>
@@ -63,30 +68,75 @@
                             <constraint firstItem="XiP-1U-mvq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="y7c-Hj-ry3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="cDd-JR-KUu" id="G0o-cn-K3K"/>
+                        <outlet property="userNameTextField" destination="580-jJ-NZz" id="5Lu-8c-tb4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="21" y="4"/>
         </scene>
-        <!--Seconf View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="4lE-AW-UDd">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="TZ4-3O-und" customClass="SeconfViewController" customModule="HomeWork2_6" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="TZ4-3O-und" customClass="SecondViewController" customModule="HomeWork2_6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UE4-5L-cuc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4s-r0-pB4">
+                                <rect key="frame" x="145" y="455" width="85" height="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="TZ4-3O-und" eventType="touchUpInside" id="1B4-vt-VFh"/>
+                                    <segue destination="9d1-nz-ITo" kind="unwind" unwindAction="unwindToSecondVCWithSegue:" id="EWe-2z-3du"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image1" translatesAutoresizingMaskIntoConstraints="NO" id="rmv-eB-VNH">
+                                <rect key="frame" x="128" y="175" width="119" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="Vbt-Ue-KJx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zex-6E-JvH">
+                                <rect key="frame" x="96" y="116" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="HWy-QM-Uqq"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="rmv-eB-VNH" firstAttribute="centerX" secondItem="K4s-r0-pB4" secondAttribute="centerX" id="14Q-rF-8xU"/>
+                            <constraint firstItem="Zex-6E-JvH" firstAttribute="leading" secondItem="HWy-QM-Uqq" secondAttribute="leading" constant="96" id="2a7-Z1-T74"/>
+                            <constraint firstItem="K4s-r0-pB4" firstAttribute="top" secondItem="rmv-eB-VNH" secondAttribute="bottom" constant="167" id="3fb-oB-Oox"/>
+                            <constraint firstItem="Zex-6E-JvH" firstAttribute="top" secondItem="HWy-QM-Uqq" secondAttribute="top" constant="116" id="CZj-vf-XX8"/>
+                            <constraint firstItem="HWy-QM-Uqq" firstAttribute="trailing" secondItem="rmv-eB-VNH" secondAttribute="trailing" constant="128" id="NUA-h4-fcn"/>
+                            <constraint firstItem="rmv-eB-VNH" firstAttribute="leading" secondItem="HWy-QM-Uqq" secondAttribute="leading" constant="128" id="rlD-Rk-h82"/>
+                            <constraint firstItem="rmv-eB-VNH" firstAttribute="top" secondItem="HWy-QM-Uqq" secondAttribute="top" constant="175" id="ucP-cB-B0N"/>
+                            <constraint firstItem="HWy-QM-Uqq" firstAttribute="bottom" secondItem="K4s-r0-pB4" secondAttribute="bottom" constant="157" id="wuF-ga-0Si"/>
+                            <constraint firstItem="HWy-QM-Uqq" firstAttribute="trailing" secondItem="Zex-6E-JvH" secondAttribute="trailing" constant="96" id="yeT-RE-Zeg"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6Y2-cC-ANE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rl-mz-y6A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="9d1-nz-ITo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="756" y="4"/>
+            <point key="canvasLocation" x="756" y="3.1484257871064472"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Image1" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
