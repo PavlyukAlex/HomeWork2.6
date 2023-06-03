@@ -9,8 +9,8 @@ import UIKit
 
 class SecondScreen: UIViewController {
     
-    var user: String?
-    var password: String?
+    var user = ""
+    var password = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
